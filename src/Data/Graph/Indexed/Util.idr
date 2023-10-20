@@ -53,7 +53,7 @@ linsEdges :
 linsEdges []      f a1 = f a1
 linsEdges (x::xs) f a1 = let a2 := linsEdge x a1 in linsEdges xs f a2
 
-||| Insert a bunch of edges into a mutable array-representation of a graph.
+||| Delete a bunch of edges into a mutable array-representation of a graph.
 export
 ldelEdges :
      List (Fin k, Fin k)
