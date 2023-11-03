@@ -105,6 +105,11 @@ export %inline
 neighbours : IGraph k e n -> Fin k -> AssocList k e
 neighbours g = neighbours . adj g
 
+||| Find the indices of the neighbouring nodes.
+export %inline
+neighboursI : IGraph k e n -> Fin k -> List (Fin k)
+neighboursI g = map fst . pairs  . neighbours . adj g
+
 export
 lneighbours : IGraph k e n -> Fin k -> AssocList k (e,n)
 lneighbours g = mapKV (\x,e => (e, lab g x)) . neighbours g
